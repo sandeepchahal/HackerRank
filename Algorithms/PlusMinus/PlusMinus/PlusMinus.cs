@@ -9,18 +9,32 @@ namespace PlusMinus
             var positive = arr.Where(col => col > 0).ToList();
             var zeros = arr.Where(col => col == 0).ToList();
 
-            if (negative.Count > 0)
-            {
-                decimal a =Convert.ToDecimal(negative.Count()) / Convert.ToDecimal(arr.Count());
-                Console.WriteLine(a);
-            }
             if (positive.Count > 0)
             {
-                Console.WriteLine(positive.Count() / arr.Count());
+                Console.WriteLine((Convert.ToDecimal(positive.Count) / Convert.ToDecimal(arr.Count)).ToString("N6"));
             }
+            else
+            {
+                Console.WriteLine("0.000000");
+            }
+            if (negative.Count > 0)
+            {
+                Console.WriteLine((Convert.ToDecimal(negative.Count) / Convert.ToDecimal(arr.Count)).ToString("N6"));
+            }
+            else
+            {
+                Console.WriteLine("0.000000");
+
+            }
+
             if (zeros.Count > 0)
             {
-                Console.WriteLine(zeros.Count() / arr.Count());
+                Console.WriteLine((Convert.ToDecimal(zeros.Count) / Convert.ToDecimal(arr.Count)).ToString("N6"));
+            }
+            else
+            {
+                Console.WriteLine("0.000000");
+
             }
 
         }
